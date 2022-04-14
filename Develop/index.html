@@ -19,6 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,13 +27,85 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p class="momenttime"></p>
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">9am</span>
+        </div>
+        <textarea class="form-control9 w-100 p-3" aria-label="With textarea"></textarea>
+        <button class="save9 w-100 p-3" type="save">Save</button>
+        
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">10am</span>
+          </div>
+          <textarea class="form-control10 w-100 p-3" aria-label="With textarea"></textarea>
+          <button class="save10 w-100 p-3" type="save">Save</button>
+          
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">11am</span>
+            </div>
+            <textarea class="form-control11 w-100 p-3" aria-label="With textarea"></textarea>
+            <button class="save11 w-100 p-3" type="save">Save</button>
+            
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">12pm</span>
+              </div>
+              <textarea class="form-control12 w-100 p-3" aria-label="With textarea"></textarea>
+              <button class="save12 w-100 p-3" type="save">Save</button>
+              
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">1pm</span>
+                </div>
+                <textarea class="form-control1 w-100 p-3" aria-label="With textarea"></textarea>
+                <button class="save1 w-100 p-3" type="save">Save</button>
+                
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">2pm</span>
+                  </div>
+                  <textarea class="form-control2 w-100 p-3" aria-label="With textarea"></textarea>
+                  <button class="save2 w-100 p-3" type="save">Save</button>
+                  
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">3pm</span>
+                    </div>
+                    <textarea class="form-control3 w-100 p-3" aria-label="With textarea"></textarea>
+                    <button class="save3 w-100 p-3" type="save">Save</button>
+                    
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">4pm</span>
+                      </div>
+                      <textarea class="form-control4 w-100 p-3" aria-label="With textarea"></textarea>
+                      <button class="save4 w-100 p-3" type="save">Save</button>
+                      
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">5pm</span>
+                        </div>
+                        <textarea class="form-control5 w-100 p-3" aria-label="With textarea"></textarea>
+                        <button class="save5 w-100 p-3" type="save">Save</button>
+                        
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">6pm</span>
+                          </div>
+                          <textarea class="form-control6 w-100 p-3" aria-label="With textarea"></textarea>
+                          <button class="save6 w-100 p-3" type="save">Save</button>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
