@@ -1,9 +1,27 @@
 var momentTime = document.querySelector(".momenttime");
+var checkTime = function () {
+  var hour = $(".hour").text().trim();
+
+  var time = moment(hour, "LT");
+  console.log(time);
+
+  $(".hour").removeClass(".present .past .future");
+
+  if (moment().isAfter(time)) {
+    $(".hour").addClass(".past");
+  } else if (moment().isBefore(time)) {
+    $(".hour").addClass(".future");
+  } else {
+    $(".hour").addClass(".present");
+  }
+};
+checkTime();
 
 var text9 = document.querySelector(".form-control9");
 var save9 = document.querySelector(".save9");
 var storageInput9 = document.querySelector(".form-control9");
 var storedInput9 = localStorage.getItem("textinput9");
+var color = document.querySelector(".textarea");
 
 var text10 = document.querySelector(".form-control10");
 var save10 = document.querySelector(".save10");
