@@ -1,3 +1,9 @@
+// const moment = require("moment");
+
+// const moment = require("moment");
+
+// const moment = require("moment");
+
 var momentTime = document.querySelector(".momenttime");
 
 var checkTime = function () {
@@ -5,31 +11,34 @@ var checkTime = function () {
   var time = moment().format("LT");
   $(".hour").removeClass(".present .past .future");
 
-  if (moment().isAfter(time)) {
-    $(".hour").addClass(".past");
-  } else if (moment().isBefore(time)) {
-    $(".hour").addClass(".future");
-  } else {
-    $(".hour").addClass(".present");
-  }
+  // if (moment().isAfter(time)) {
+  //   $(".hour").addClass(".past");
+  // } else if (moment().isBefore(time)) {
+  //   $(".hour").addClass(".future");
+  // } else {
+  //   $(".hour").addClass(".present");
+  // }
 };
-// checkTime();
+checkTime();
 
 $(".input-group-text").each(function () {
   var text = $(this)[0].innerHTML;
-  var time = moment().format("LT");
-  console.log(time);
 
-  if (text < time) {
-    $(".hour").addClass("past");
-    console.log(true);
-  } else if (text > time) {
-    $(".hour").removeClass("past");
-    $(".hour").addClass("future");
+  var time = moment();
+  var date = moment().format("L");
+  var textTime = moment(date + " " + text);
+  var difference = textTime.diff(time);
+  console.log(difference);
+
+  if (difference < -3600000) {
+    $(`.hour[data-key="${text}"]`).addClass("past");
+  } else if (difference > 3600000 || (difference > 0 && difference < 3600000)) {
+    $(`.hour[data-key="${text}"]`).removeClass("past");
+    $(`.hour[data-key="${text}"]`).addClass("future");
   } else {
-    $(".hour").removeClass("past");
-    $(".hour").removeClass("future");
-    $(".hour").addClass("present");
+    $(`.hour[data-key="${text}"]`).removeClass("past");
+    $(`.hour[data-key="${text}"]`).removeClass("future");
+    $(`.hour[data-key="${text}"]`).addClass("present");
   }
 });
 
