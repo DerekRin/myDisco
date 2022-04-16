@@ -1,10 +1,8 @@
 var momentTime = document.querySelector(".momenttime");
+
 var checkTime = function () {
   var hour = $(".hour").text().trim();
-
-  var time = moment(hour, "LT");
-  console.log(time);
-
+  var time = moment().format("LT");
   $(".hour").removeClass(".present .past .future");
 
   if (moment().isAfter(time)) {
@@ -15,7 +13,27 @@ var checkTime = function () {
     $(".hour").addClass(".present");
   }
 };
-checkTime();
+// checkTime();
+
+$(".input-group-text").each(function () {
+  var text = $(this)[0].innerHTML;
+  var time = moment().format("LT");
+  console.log(time);
+
+  if (text < time) {
+    $(".hour").addClass("past");
+    console.log(true);
+  } else if (text > time) {
+    $(".hour").removeClass("past");
+    $(".hour").addClass("future");
+  } else {
+    $(".hour").removeClass("past");
+    $(".hour").removeClass("future");
+    $(".hour").addClass("present");
+  }
+});
+
+momentTime.innerHTML = moment().format("LLLL");
 
 var text9 = document.querySelector(".form-control9");
 var save9 = document.querySelector(".save9");
@@ -67,8 +85,6 @@ var text6 = document.querySelector(".form-control6");
 var save6 = document.querySelector(".save6");
 var storageInput6 = document.querySelector(".form-control6");
 var storedInput6 = localStorage.getItem("textinput6");
-
-momentTime.innerHTML = moment().format("LLLL");
 
 if (text9) {
   text9.textContent = storedInput9;
